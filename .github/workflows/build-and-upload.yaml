@@ -1,8 +1,9 @@
-name: Build and Upload Artifact
+name: Build and Upload 
 
 on:
   push:
-    branches: [main]
+    branches: 
+      - main
 
 jobs:
   build:
