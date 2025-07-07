@@ -21,6 +21,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Correr Lint
+        run: npm run lint
+
+      - name: Correr los test 
+        run: npm run test
+
       - name: Build with Vite
         run: npm run build
 
