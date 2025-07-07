@@ -10,24 +10,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Clona el repositorio
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2. Instala dependencias de Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 23
 
       - name: Install dependencies
         run: npm install
 
-      # 3. Ejecuta el build con Vite
+      - name: Correr Lint
+        run: npm run lint
+
+      - name: Correr los test 
+        run: npm run test
+
       - name: Build with Vite
         run: npm run build
 
-      # 4. Sube la carpeta 'dist' como artifact
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
